@@ -1,0 +1,9 @@
+{% if outdoor_details %}
+    <ul>
+    {% for activity in outdoor_details%}
+        <li><p>{{ activity.activity_name }}</p></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No data available.</p>
+{% endif %}

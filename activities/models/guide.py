@@ -11,3 +11,6 @@ class Guide(TimeStampMixin, models.Model):
     place = models.ForeignKey('activities.Place', on_delete=models.CASCADE)
     phone = PhoneNumberField(blank=True)
     email = models.EmailField(max_length=100, null=True, blank=True, unique=True)
+
+    def __str__(self):
+        return '{name}, {place}'.format(name=self.name, place=self.place.region)

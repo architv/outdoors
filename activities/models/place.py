@@ -11,3 +11,7 @@ class Place(TimeStampMixin, models.Model):
     country = models.CharField(max_length=200)
     lat = models.DecimalField(_('Latitude'), max_digits=10, decimal_places=8)
     lng = models.DecimalField(_('Longitude'), max_digits=11, decimal_places=8)
+
+    def __str__(self):
+        return '{region}, {state}, {country}'.format(
+            region=self.region, state=self.state, country=self.country)
